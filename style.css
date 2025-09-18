@@ -92,16 +92,22 @@ h1 {
 
 #game-logo.fade-out { opacity: 0; }
 
-#game-logo.fade-armed { 
-    animation: logoFade 1.2s ease forwards;
-    animation-delay: 5s;
-}
-
-@keyframes logoFade {
-    to { opacity: 0; }
+#start-screen-content {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px; /* Adjust as needed */
 }
 
 #unlocks-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -204,7 +210,6 @@ h1 {
     justify-content: center;
     gap: 15px;
     margin-bottom: 10px;
-    min-height: 48px;
 }
 
 #selection-back {
@@ -236,17 +241,6 @@ button {
 button:active {
     transform: translateY(5px);
     box-shadow: 0 0px #2a682c;
-}
-
-#start-button {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.preserve-space {
-    visibility: hidden;
 }
 
 .controls {

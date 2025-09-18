@@ -22,21 +22,19 @@ export function bindUI() {
     const fishCategory = document.getElementById('fish-category');
 
     function openSelection(type) {
+        const logo = document.getElementById('game-logo');
+        if (logo) {
+            logo.classList.add('fade-out');
+        }
         selectionTitle.textContent = type === 'bear' ? 'Select Bear' : 'Select Fish';
         bearCategory.style.display = type === 'bear' ? 'block' : 'none';
         fishCategory.style.display = type === 'fish' ? 'block' : 'none';
-        const logo = document.getElementById('game-logo');
-        if (logo) { 
-            logo.classList.remove('fade-armed');
-            logo.classList.add('fade-out');
-        }
-        quickChoices.classList.add('preserve-space');
+        quickChoices.classList.add('hidden');
         unlocksPanel.classList.remove('hidden');
     }
 
     selectionBack.addEventListener('click', () => {
         unlocksPanel.classList.add('hidden');
-        quickChoices.classList.remove('preserve-space');
         quickChoices.classList.remove('hidden');
     });
 
@@ -88,10 +86,6 @@ export function showStart() {
     if (logo) {
         logo.classList.remove('fade-out');
         logo.style.opacity = '1';
-        // re-arm CSS animation so it runs every time we show the start screen
-        logo.classList.remove('fade-armed');
-        void logo.offsetWidth; // reflow to restart animation
-        logo.classList.add('fade-armed');
     }
 }
 
