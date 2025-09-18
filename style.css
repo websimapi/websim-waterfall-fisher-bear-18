@@ -204,6 +204,7 @@ h1 {
     justify-content: center;
     gap: 15px;
     margin-bottom: 10px;
+    min-height: 48px;
 }
 
 #selection-back {
@@ -235,6 +236,17 @@ button {
 button:active {
     transform: translateY(5px);
     box-shadow: 0 0px #2a682c;
+}
+
+#start-button {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.preserve-space {
+    visibility: hidden;
 }
 
 .controls {

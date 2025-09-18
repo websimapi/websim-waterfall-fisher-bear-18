@@ -25,12 +25,18 @@ export function bindUI() {
         selectionTitle.textContent = type === 'bear' ? 'Select Bear' : 'Select Fish';
         bearCategory.style.display = type === 'bear' ? 'block' : 'none';
         fishCategory.style.display = type === 'fish' ? 'block' : 'none';
-        quickChoices.classList.add('hidden');
+        const logo = document.getElementById('game-logo');
+        if (logo) { 
+            logo.classList.remove('fade-armed');
+            logo.classList.add('fade-out');
+        }
+        quickChoices.classList.add('preserve-space');
         unlocksPanel.classList.remove('hidden');
     }
 
     selectionBack.addEventListener('click', () => {
         unlocksPanel.classList.add('hidden');
+        quickChoices.classList.remove('preserve-space');
         quickChoices.classList.remove('hidden');
     });
 
