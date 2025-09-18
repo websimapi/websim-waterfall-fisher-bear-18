@@ -10,6 +10,8 @@ import { BEARS, FISH, getPlayerProgress, savePlayerProgress } from './unlocks.js
 
 // --- GAME OBJECTS (refactored) ---
 let bear = null;
+let showcaseBear = null; // added
+let showcaseFish = null; // added
 const scenery = createScenery();
 scene.add(scenery);
 const waterfall = createWaterfall();
