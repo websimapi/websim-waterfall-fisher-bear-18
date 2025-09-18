@@ -1,5 +1,7 @@
 import { BEARS, FISH } from '../unlocks.js';
 
+let fadeTimeout;
+
 export function bindUI() {
     const startScreen = document.getElementById('start-screen');
     const gameOverScreen = document.getElementById('game-over-screen');
@@ -85,7 +87,17 @@ export function showStart() {
     const logo = document.getElementById('game-logo');
     if (logo) {
         logo.classList.remove('fade-out');
+        logo.style.animation = 'none';
+        void logo.offsetHeight; // Trigger reflow to restart animation
+        logo.style.animation = '';
         logo.style.opacity = '1';
+
+        clearTimeout(fadeTimeout);
+        fadeTimeout = setTimeout(() => {
+             if (logo && !logo.classList.contains('fade-out')) {
+                logo.classList.add('fade-out');
+             }
+        }, 2000);
     }
 }
 

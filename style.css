@@ -88,6 +88,11 @@ h1 {
     margin-bottom: 20px;
     opacity: 1;
     transition: opacity 1.2s ease-out;
+    animation: fadeOutLogo 1.2s ease-out 2s forwards;
+}
+
+@keyframes fadeOutLogo {
+    to { opacity: 0; }
 }
 
 #game-logo.fade-out { opacity: 0; }
