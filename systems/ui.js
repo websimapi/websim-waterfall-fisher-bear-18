@@ -82,8 +82,10 @@ export function showStart() {
     if (logo) {
         logo.classList.remove('fade-out');
         logo.style.opacity = '1';
-        clearTimeout(window.__logoFadeTimer);
-        window.__logoFadeTimer = setTimeout(() => logo.classList.add('fade-out'), 5000);
+        // re-arm CSS animation so it runs every time we show the start screen
+        logo.classList.remove('fade-armed');
+        void logo.offsetWidth; // reflow to restart animation
+        logo.classList.add('fade-armed');
     }
 }
 

@@ -92,6 +92,15 @@ h1 {
 
 #game-logo.fade-out { opacity: 0; }
 
+#game-logo.fade-armed { 
+    animation: logoFade 1.2s ease forwards;
+    animation-delay: 5s;
+}
+
+@keyframes logoFade {
+    to { opacity: 0; }
+}
+
 #unlocks-container {
     display: flex;
     flex-direction: column;
