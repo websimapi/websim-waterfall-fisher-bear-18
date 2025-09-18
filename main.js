@@ -255,9 +255,6 @@ import { mountRenderer } from './scene.js';
 mountRenderer(document.getElementById('game-container'));
 window.addEventListener('resize', resizeRenderer);
 
-let showcaseBear = null;
-let showcaseFish = null;
-
 // --- GAME LOOP (trimmed) ---
 const gravity = new THREE.Vector3(0, -0.05, 0);
 
